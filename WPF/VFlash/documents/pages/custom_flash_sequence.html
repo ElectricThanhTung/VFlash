@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../styles/code_color.css">
+        <link rel="stylesheet" href="../styles/xml_desc_table.css">
+        <title>Add New Device</title>
+    </head>
+    <body style="margin: 10px; font-family: calibri;">
+        <li><b style="font-size: 20px;">Default flashing sequence:</b>
+            <ul>
+                <table class="main_table">
+                    <tr>
+                        <td style="text-align: center"><b>Step</b></td>
+                        <td style="text-align: center"><b>IsFunctional</b></td>
+                        <td style="text-align: center"><b>AlwaysExecuted</b></td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">StartExtendedSession</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">CheckProgrammingPreconditions</td>
+                        <td class="xml_value" style="text-align: center">flase</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">DisableDTCSetting</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">DisableNormalCommunication</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">StartProgrammingSession</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">PerformSecurityAccess</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">WriteFingerPrint</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">
+                            <span>FlashBinaries</span>
+                            <ul style="font-size: 13px;">
+                                <li>RequestErase</li>
+                                <li>RequestDownload</li>
+                                <li>DataTransfer</li>
+                                <li>DownloadStop</li>
+                                <li>Check Signature/CRC</li>
+                            </ul>
+                        </td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">CheckProgrammingDependencies</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                        <td style="text-align: center; color: #ad0d0d;">false</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">HardReset</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">EnableNormalCommunication</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">EnableDTCSetting</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                    </tr>
+                    <tr>
+                        <td class="xml_name">StartDefaultSession</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                        <td style="text-align: center; color: #577d0d;">true</td>
+                    </tr>
+                </table>
+            </ul>
+        </li>
+        <li><b style="font-size: 20px;">Customize flashing sequence:</b>
+            <ul>
+                <p><span>With VFlash you can customize flashing sequence. To change flashing sequence for your ECU, you just need to specify the xml file containing your actions in the <b>Flash Actions</b> section at the <b>Configuration</b> tab.</span></p>
+                <p><span>Below is an example content of the flashing sequence xml file:</span></p>
+                <div class="code_panel">
+                    <span class="xml_tag">&lt;<span class="xml_name">FlashActions</span>&gt;</span>
+                    <br/>
+                    <span class="xml_tag" style="margin-left: 30px;">&lt;<span class="xml_name">StartDefaultSession</span>/&gt;</span>
+                    <br/>
+                    <span class="xml_tag" style="margin-left: 30px;">&lt;<span class="xml_name">StartExtendedSession</span></span>
+                    <span class="xml_tag"><span class="xml_attr">IsFunctional</span>=<span class="xml_value">"false"</span>/&gt;</span>
+                    <br/>
+                    <span class="xml_tag" style="margin-left: 30px;">&lt;<span class="xml_name">HardReset</span></span>
+                    <span class="xml_tag"><span class="xml_attr">AlwaysExecuted</span>=<span class="xml_value">"true"</span>/&gt;</span>
+                    <br/>
+                    <span class="xml_tag">&lt;/<span class="xml_name">FlashActions</span>&gt;</span>
+                </div> 
+                <p><span>VFlash supports the following actions:</span></p>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>FlashActions</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>This tag is the root node of the flash sequence. All actions must be contained in FlashActions tag.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action list even if there is no data file to flash. Otherwise VFlash will check whether there is data file or not before flashing. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">TesterPresent</span></td>
+                                    <td>If this value is <b>true</b>, the TesterPresent message will be sent in the during flashing. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>StartDefaultSession</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send Start Default Session message (<span class="xml_value">10 01</span>).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">IsFunctional</span></td>
+                                    <td>If this value is <b>true</b>, the FunctionalId will be used for this request message. Otherwise the TxId will be used. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">SuppressBit</span></td>
+                                    <td>If this value is <b>true</b>, the Suppress Bit will be inserted in the request message. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>StartExtendedSession</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send Start Extended Session message (<span class="xml_value">10 03</span>).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">IsFunctional</span></td>
+                                    <td>If this value is <b>true</b>, the FunctionalId will be used for this request message. Otherwise the TxId will be used. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">SuppressBit</span></td>
+                                    <td>If this value is <b>true</b>, the Suppress Bit will be inserted in the request message. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>StartProgrammingSession</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send Start Programming Session message (<span class="xml_value">10 02</span>).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>DisableDTCSetting</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send Disable DTC Setting message (<span class="xml_value">85 02</span>).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">IsFunctional</span></td>
+                                    <td>If this value is <b>true</b>, the FunctionalId will be used for this request message. Otherwise the TxId will be used. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">SuppressBit</span></td>
+                                    <td>If this value is <b>true</b>, the Suppress Bit will be inserted in the request message. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>EnableDTCSetting</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send Enable DTC Setting message (<span class="xml_value">85 01</span>).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">IsFunctional</span></td>
+                                    <td>If this value is <b>true</b>, the FunctionalId will be used for this request message. Otherwise the TxId will be used. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">SuppressBit</span></td>
+                                    <td>If this value is <b>true</b>, the Suppress Bit will be inserted in the request message. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>DisableNormalCommunication</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send Disable Normal Communication message (<span class="xml_value">28 01 03</span>).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">IsFunctional</span></td>
+                                    <td>If this value is <b>true</b>, the FunctionalId will be used for this request message. Otherwise the TxId will be used. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">SuppressBit</span></td>
+                                    <td>If this value is <b>true</b>, the Suppress Bit will be inserted in the request message. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>EnableNormalCommunication</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send Enable Normal Communication message (<span class="xml_value">28 00 03</span>).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">IsFunctional</span></td>
+                                    <td>If this value is <b>true</b>, the FunctionalId will be used for this request message. Otherwise the TxId will be used. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">SuppressBit</span></td>
+                                    <td>If this value is <b>true</b>, the Suppress Bit will be inserted in the request message. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>CheckProgrammingDependencies</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send Check Programming Dependencies message (<span class="xml_value">31 01 FF 01</span>).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>CheckProgrammingPreconditions</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send Check Programming Preconditions message (<span class="xml_value">31 01 02 03</span>).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>PerformSecurityAccess</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>This action will perform send <b>Request Seed Key</b> (<span class="xml_value">27 0x</span>) to get seed key value and use this value to gen key value by using the function GenerateKeyEx in the <b>Seed Key Dll</b> file. Then this key value will be sent to ECU to <b>Perform Security Access</b>.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>FlashBinaries</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>
+                            <span>This action will perform the transfer of all valid files in the <b>File Tab</b>. Each file will be transferred in steps:</span>
+                            <ul style="margin: 0;">
+                                <li><b>Request Erase</b> (<span class="xml_value">31 01 FF 00</span>): Perform send Request Erase message if the file is not Flash Driver</li>
+                                <li><b>Request Download</b> (<span class="xml_value">34</span>).</li>
+                                <li><b>Data Transfer</b> (<span class="xml_value">36</span>).</li>
+                                <li><b>Download Stop</b> (<span class="xml_value">37</span>).</li>
+                                <li><b>Check Signature/CRC</b> (<span class="xml_value">31 01 02 02</span>).</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">EraseEnabled</span></td>
+                                    <td>If this value is <b>true</b>, a <b>RequestErase</b> message will be sent if the file is not Flash Driver. Otherwise RequestErase messgse will not be sent. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>WriteFingerPrint</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>This action will send <b>Write Fingerprint</b> message with the time value taken from your PC system.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>HardReset</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send Hard Reset message (<span class="xml_value">11 01</span>).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">IsFunctional</span></td>
+                                    <td>If this value is <b>true</b>, the FunctionalId will be used for this request message. Otherwise the TxId will be used. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">SuppressBit</span></td>
+                                    <td>If this value is <b>true</b>, the Suppress Bit will be inserted in the request message. The default value of this attribute is <b>true</b>.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>CustomRequest</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Send a message that you define yourself.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">IsFunctional</span></td>
+                                    <td>If this value is <b>true</b>, the FunctionalId will be used for this request message. Otherwise the TxId will be used. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">Name</span></td>
+                                    <td>Name of your request message. This is a string value. This value will be display in the <b>Flash Tab</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">DataRequest</span></td>
+                                    <td>Data for your request message. This attribute accepts hex values only, for example <span class="xml_attr">DataRequest</span>=<span class="xml_value">"48 65 6C 6C 6F"</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">ExpectedResponse</span></td>
+                                    <td>Expected Response for this request message. If this attribute is left blank and <b>IsFunctional</b> is <b>false</b> the <b>Positive Response</b> will be used instead. If this attribute is left blank and <b>IsFunctional</b> is <b>true</b>, Response value will not be taken care of.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="main_table">
+                    <tr>
+                        <td><b>Tag Name</b></td>
+                        <td style="text-align: center"><span class="xml_name"><b>DelayAction</b></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>Delay for a specified amount of time.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Attributes</b></td>
+                        <td style="padding: 0;">
+                            <table class="sub_table">
+                                <tr>
+                                    <td><span class="xml_attr">AlwaysExecuted</span></td>
+                                    <td>If this value is <b>true</b>, VFlash will always execute this action even the previous action failed. Otherwise this action will be not executed if previous action failed. The default value of this attribute is <b>false</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">Name</span></td>
+                                    <td>Name for this action. This is a string value. This value will be display in the <b>Flash Tab</b>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="xml_attr">Time</span></td>
+                                    <td>Delay time value. The unit of time is milliseconds. This attribute only accepts integers</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </ul>
+        </li>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+
+body {
+    width: 100%;
+    margin: 0px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('../images/backgrounds/bg.png');
+}
+
+.content_iframe {
+    width: 100%;
+    Height: 100vh;
+    border: 0px;
+    overflow-x: hidden;
+}
+
+.content_div {
+    margin-left: 200px;
+    background-color: transparent;
+}

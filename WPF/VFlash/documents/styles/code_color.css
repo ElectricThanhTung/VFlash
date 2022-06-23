@@ -1,0 +1,93 @@
+
+.code_panel {
+    white-space: nowrap;
+    margin-left: 20px;
+    overflow-x: scroll;
+    font-size: 14px;
+    padding: 10px;
+    font-family: "Cascadia Mono";
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #00000010;
+    margin-right: 20px;
+    background-color: #0000000a;
+}
+
+.code_panel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.code_panel::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    border-radius: 3px;
+}
+
+.code_panel::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+.xml_tag {
+    font: inherit;
+    color: black;
+}
+
+.xml_name {
+    font: inherit;
+    color: #b75301;
+}
+
+.xml_attr {
+    font: inherit;
+    color: #015492;
+}
+
+.xml_value {
+    font: inherit;
+    color: #577d0d;
+}
+
+.cs_keyword {
+    font: inherit;
+    color: #015492;
+}
+
+.cs_name {
+    font: inherit;
+    color: black;
+}
+
+.cs_method_name {
+    font: inherit;
+    color: #b78d01;
+}
+
+.cs_enum {
+    font: inherit;
+    color: #b4b701;
+}
+
+.cs_type {
+    font: inherit;
+    color: #4ec9b0;
+}
+
+.cs_string {
+    font: inherit;
+    color: #d66231;
+}
+
+.cs_number {
+    font: inherit;
+    color: #dcdcaa;
+}
+
+.cs_variable {
+    font: inherit;
+    color: #7d0d0d;
+}
+
+.cs_return {
+    font: inherit;
+    color: #b824cc
+}

@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VFlash", "VFlash\VFlash.csproj", "{6A79AA72-FF5B-4804-BA57-C65B61550319}"
+	ProjectSection(ProjectDependencies) = postProject
+		{14B72CB7-29CE-4D13-80B1-041E8DF907E3} = {14B72CB7-29CE-4D13-80B1-041E8DF907E3}
+		{2F6815A8-5BC8-4FDE-A819-779381CED2FB} = {2F6815A8-5BC8-4FDE-A819-779381CED2FB}
+		{763E9835-8EB7-47AB-923E-C904F71F904E} = {763E9835-8EB7-47AB-923E-C904F71F904E}
+		{CEBE5198-E89A-4818-992E-32E861EEF60C} = {CEBE5198-E89A-4818-992E-32E861EEF60C}
+		{D3FDD797-91C2-455D-BCE2-53D65DF9BC45} = {D3FDD797-91C2-455D-BCE2-53D65DF9BC45}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VFlashDevices", "VFlashDevices\VFlashDevices.csproj", "{D3FDD797-91C2-455D-BCE2-53D65DF9BC45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorDevices", "VectorDevices\VectorDevices.csproj", "{763E9835-8EB7-47AB-923E-C904F71F904E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IxxatDevices", "IxxatDevices\IxxatDevices.csproj", "{14B72CB7-29CE-4D13-80B1-041E8DF907E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KvaserDevices", "KvaserDevices\KvaserDevices.csproj", "{CEBE5198-E89A-4818-992E-32E861EEF60C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyDevices", "TinyDevices\TinyDevices.csproj", "{2F6815A8-5BC8-4FDE-A819-779381CED2FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A79AA72-FF5B-4804-BA57-C65B61550319}.Debug|x86.ActiveCfg = Debug|x86
+		{6A79AA72-FF5B-4804-BA57-C65B61550319}.Debug|x86.Build.0 = Debug|x86
+		{6A79AA72-FF5B-4804-BA57-C65B61550319}.Release|x86.ActiveCfg = Release|x86
+		{6A79AA72-FF5B-4804-BA57-C65B61550319}.Release|x86.Build.0 = Release|x86
+		{D3FDD797-91C2-455D-BCE2-53D65DF9BC45}.Debug|x86.ActiveCfg = Debug|x86
+		{D3FDD797-91C2-455D-BCE2-53D65DF9BC45}.Debug|x86.Build.0 = Debug|x86
+		{D3FDD797-91C2-455D-BCE2-53D65DF9BC45}.Release|x86.ActiveCfg = Release|x86
+		{D3FDD797-91C2-455D-BCE2-53D65DF9BC45}.Release|x86.Build.0 = Release|x86
+		{763E9835-8EB7-47AB-923E-C904F71F904E}.Debug|x86.ActiveCfg = Debug|x86
+		{763E9835-8EB7-47AB-923E-C904F71F904E}.Debug|x86.Build.0 = Debug|x86
+		{763E9835-8EB7-47AB-923E-C904F71F904E}.Release|x86.ActiveCfg = Release|x86
+		{763E9835-8EB7-47AB-923E-C904F71F904E}.Release|x86.Build.0 = Release|x86
+		{14B72CB7-29CE-4D13-80B1-041E8DF907E3}.Debug|x86.ActiveCfg = Debug|x86
+		{14B72CB7-29CE-4D13-80B1-041E8DF907E3}.Debug|x86.Build.0 = Debug|x86
+		{14B72CB7-29CE-4D13-80B1-041E8DF907E3}.Release|x86.ActiveCfg = Release|x86
+		{14B72CB7-29CE-4D13-80B1-041E8DF907E3}.Release|x86.Build.0 = Release|x86
+		{CEBE5198-E89A-4818-992E-32E861EEF60C}.Debug|x86.ActiveCfg = Debug|x86
+		{CEBE5198-E89A-4818-992E-32E861EEF60C}.Debug|x86.Build.0 = Debug|x86
+		{CEBE5198-E89A-4818-992E-32E861EEF60C}.Release|x86.ActiveCfg = Release|x86
+		{CEBE5198-E89A-4818-992E-32E861EEF60C}.Release|x86.Build.0 = Release|x86
+		{2F6815A8-5BC8-4FDE-A819-779381CED2FB}.Debug|x86.ActiveCfg = Debug|x86
+		{2F6815A8-5BC8-4FDE-A819-779381CED2FB}.Debug|x86.Build.0 = Debug|x86
+		{2F6815A8-5BC8-4FDE-A819-779381CED2FB}.Release|x86.ActiveCfg = Release|x86
+		{2F6815A8-5BC8-4FDE-A819-779381CED2FB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF0A649F-EC65-4D75-AE7D-99E5B8CE0B8C}
+	EndGlobalSection
+EndGlobal

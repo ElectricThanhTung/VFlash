@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../styles/code_color.css">
+        <title>Add New Device</title>
+    </head>
+    <body style="margin: 10px; font-family: calibri;">
+        <li><b style="font-size: 20px;">How to add new device to VFlash</b>
+            <ul>
+                <p>To add new CAN device to VFlash, simply add the <b>CanDevice</b> tag to devices config file of VFlash. You can find and open devices config file at path <b>devices/devices.cfg</b>.</p>
+            </ul>
+        </li>
+        <li><b style="font-size: 20px;">Devices/devices.cfg file:</b>
+            <ul>
+                <li><p>Below is an example content of the devices.cfg file:</p></li>
+                <div class="code_panel">
+                    <span class="xml_tag">&lt;<span class="xml_name">VFlashDevices</span>&gt;</span>
+                    <br/>
+                    <span class="xml_tag" style="margin-left: 30px;">&lt;<span class="xml_name">CanDevice</span></span>
+                    <span class="xml_tag"><span class="xml_attr">Name</span>=<span class="xml_value">"Device 1"</span></span>
+                    <span class="xml_tag"><span class="xml_attr">Icon</span>=<span class="xml_value">"device_1.png"</span></span>
+                    <span class="xml_tag"><span class="xml_attr">Library</span>=<span class="xml_value">"device_1.dll"</span></span>
+                    <span class="xml_tag"><span class="xml_attr">Class</span>=<span class="xml_value">"MyDevices.Device1"</span>/&gt;</span>
+                    <br/>
+                    <span class="xml_tag" style="margin-left: 30px;">&lt;<span class="xml_name">CanDevice</span></span>
+                    <span class="xml_tag"><span class="xml_attr">Name</span>=<span class="xml_value">"Device 2"</span></span>
+                    <span class="xml_tag"><span class="xml_attr">Icon</span>=<span class="xml_value">"device_2.png"</span></span>
+                    <span class="xml_tag"><span class="xml_attr">Library</span>=<span class="xml_value">"device_2.dll"</span></span>
+                    <span class="xml_tag"><span class="xml_attr">Class</span>=<span class="xml_value">"MyDevices.Device2"</span>/&gt;</span>
+                    <br/>
+                    <span class="xml_tag">&lt;/<span class="xml_name">VFlashDevices</span>&gt;</span>
+                </div>
+                <li><p><b>Name</b>: The name of device you want to display in the <b>VFlash</b> application. This field is required.</p></li>
+                <li><p><b>Icon</b>: The icon image of device you want to display in the <b>VFlash</b> application. This field can be omitted.</p></li>
+                <li><p><b>Library</b>: The library used in the <b>CanDevice</b> is a dll file written in <b>C#</b> language and class for CAN device object must be extended form <b>VFlashDevices.AbstractCanDevice</b> and implement its required methods/properties. The class <b>VFlashDevices.AbstractCanDevice</b> can be found in the file <b>bin/VFlashDevices.dll</b>. This field is required.</p></li>
+            </ul>
+        </li>
+        <li><b style="font-size: 20px;">CAN device library (DLL file)</b></li>
+        <ul>
+            <li><p>Below is an example code for <b>MyDevices.Device1</b>. You can find and open this example project at <b>devices/example</b> or download <a href=""><b>here</b></a>.</p></li>
+            <div class="code_panel">
+                <span class="cs_keyword">using </span><span class="cs_name">System.Collections.Generic;</span><br/>
+                <span class="cs_keyword">using </span><span class="cs_name">System.Linq;</span><br/>
+                <span class="cs_keyword">using </span><span class="cs_name">VFlashDevices;</span><br/><br/>
+                <span class="cs_keyword">namespace </span><span class="cs_name">MyDevices &#x7b;</span><br/>
+                <div style="margin-left: 30px;">
+                    <span class="cs_keyword">public class </span><span class="cs_type">Device1</span><span class="cs_name"> : </span><span class="cs_type">AbstractCanDevice</span><span class="cs_name"> &#x7b;</span>
+                    <div style="margin-left: 30px;">
+                        <span class="cs_keyword">public override event </span><span class="cs_type">CanDataReceivedEventHandler<span class="cs_name"> DataReceived;</span></span><br/><br/>
+                        <span class="cs_keyword">public </span><span class="cs_type">Device1</span><span class="cs_name">() &#x7b;</span><br/><br/>
+                        <span class="cs_name">&#x7d;</span><br/><br/>
+                        <span class="cs_keyword">public override int </span><span class="cs_name">Bitrate</span><span class="cs_name"> &#x7b;</span><br/>
+                        <span style="margin-left: 30px;" class="cs_keyword">get<span class="cs_name">;</span> set<span class="cs_name">;</span></span><br/>
+                        <span class="cs_name">&#x7d;</span><br/><br/>
+                        <span class="cs_keyword">public override string </span><span class="cs_name">Channel</span><span class="cs_name"> &#x7b;</span><br/>
+                        <span style="margin-left: 30px;" class="cs_keyword">get<span class="cs_name">;</span> set<span class="cs_name">;</span></span><br/>
+                        <span class="cs_name">&#x7d;</span><br/><br/>
+                        <span class="cs_keyword">public override </span><span class="cs_enum">CanType</span><span class="cs_name"> CanType</span><span class="cs_name"> &#x7b;</span><br/>
+                        <span style="margin-left: 30px;" class="cs_keyword">get<span class="cs_name">;</span> set<span class="cs_name">;</span></span><br/>
+                        <span class="cs_name">&#x7d;</span><br/><br/>
+                        <span class="cs_keyword">public new static <span class="cs_type">List</span><span class="cs_name">&lt;</span>string</span><span class="cs_name">&gt; </span><span class="cs_method_name">GetChannels</span><span class="cs_name">() &#x7b;</span><br/>
+                        <div style="margin-left: 30px;">
+                            <span class="cs_keyword">string</span><span class="cs_name">[] </span><span class="cs_variable">channels</span><span class="cs_name"> = &#x7b; </span><span class="cs_name"><span class="cs_string">"Channel 1"</span>, <span class="cs_string">"Channel 2"</span>, <span class="cs_string">"Channel 3"</span> &#x7d;;</span><br/>
+                            <span class="cs_return">return </span><span class="cs_variable">channels</span><span class="cs_name">.<span class="cs_method_name">ToList</span>();</span>
+                        </div>
+                        <span class="cs_name">&#x7d;</span><br/><br/>
+                        <span class="cs_keyword">public override bool </span><span class="cs_method_name">Connect</span><span class="cs_name">() &#x7b;</span><br/>
+                        <span class="cs_return" style="margin-left: 30px;">return <span class="cs_keyword">true</span><span class="cs_name">;</span></span><br/>
+                        <span class="cs_name">&#x7d;</span><br/><br/>
+                        <span class="cs_keyword">public override bool </span><span class="cs_method_name">DataTransmit</span><span class="cs_name">(<span class="cs_keyword">int </span><span class="cs_variable">txId</span>, <span class="cs_keyword">byte</span>[] <span class="cs_variable">data</span>) &#x7b;</span><br/>
+                        <span class="cs_return" style="margin-left: 30px;">return <span class="cs_keyword">true</span><span class="cs_name">;</span></span><br/>
+                        <span class="cs_name">&#x7d;</span><br/><br/>
+                        <span class="cs_keyword">public override void </span><span class="cs_method_name">Disconnect</span><span class="cs_name">() &#x7b;</span><br/><br/>
+                        <span class="cs_name">&#x7d;</span><br/>
+                    </div>
+                    <span class="cs_name">&#x7d;</span><br/>
+                </div>
+                <span class="cs_name">&#x7d;</span>
+            </div>
+        </ul>
+    </body>
+</html>

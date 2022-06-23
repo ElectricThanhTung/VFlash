@@ -1,0 +1,36 @@
+
+.navigation_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #f7f7f7d0;
+    background-image: url('../images/backgrounds/nav_bg.png');
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    border-right: 1px solid gray;
+}
+
+.navigation_list li {
+    display: block;
+    color: rgba(255, 255, 255, 0.555);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.navigation_list li.active {
+    background-color: #50ffff93;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.navigation_list li:hover:not(.active) {
+    background-color: #fc6d689c;
+    cursor: pointer;
+    color: white;
+}

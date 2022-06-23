@@ -1,0 +1,1570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A79AA72-FF5B-4804-BA57-C65B61550319}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VFlash</RootNamespace>
+    <AssemblyName>VFlash</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.2.9.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>Latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>Latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=6.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.1.0\lib\net462\EPPlus.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.0\lib\net452\EPPlus.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.0\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1370.28, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1370.28\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1370.28, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1370.28\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomProgressBar.xaml.cs">
+      <DependentUpon>CustomProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomScrollBar.xaml.cs">
+      <DependentUpon>CustomScrollBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DeverloperInfo.xaml.cs">
+      <DependentUpon>DeverloperInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoadingIcon.xaml.cs">
+      <DependentUpon>LoadingIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomListBox.xaml.cs">
+      <DependentUpon>CustomListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Libraries\CanSharp\CanDevice.cs" />
+    <Compile Include="Libraries\CanSharp\Types\IDevice.cs" />
+    <Compile Include="Libraries\CanSharp\CanTp.cs" />
+    <Compile Include="Libraries\CanSharp\DeviceManager.cs" />
+    <Compile Include="Libraries\CanSharp\Types\EventHandlerTypes.cs" />
+    <Compile Include="Libraries\CanSharp\Types\UDSResponse.cs" />
+    <Compile Include="Libraries\CanSharp\Types\UDSResponseType.cs" />
+    <Compile Include="Libraries\CanSharp\UDS.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\CheckProgrammingDependencies.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\CheckProgrammingPreconditions.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\CustomRequest.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\DelayAction.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\DisableDTCSetting.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\DisableNormalCommunication.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\EnableDTCSetting.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\EnableNormalCommunication.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\FlashBinaries.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\HardReset.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\PerformSecurityAccess.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\StartDefaultSession.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\StartExtendedSession.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\StartProgrammingSession.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\WriteFingerPrint.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Types\EventHandlerTypes.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Types\FlashAction.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Steps\UDSMessage.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Types\FlashActionArgs.cs" />
+    <Compile Include="Libraries\VFlash\Types\FlashConfigInfo.cs" />
+    <Compile Include="Libraries\VFlash\Types\EcuFlashInfo.cs" />
+    <Compile Include="Libraries\VFlash\Types\FlashFileInfo.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Types\InfomationEventArgs.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Types\ProgressChangedArgs.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\FlashSequence.cs" />
+    <Compile Include="Libraries\VFlash\VFlashFiles\ActionsReader.cs" />
+    <Compile Include="Libraries\VFlash\VFlashFiles\CrcReader.cs" />
+    <Compile Include="Libraries\VFlash\VFlashFiles\FwReader.cs" />
+    <Compile Include="Libraries\VFlash\VFlashFiles\HexFileReader.cs" />
+    <Compile Include="Libraries\VFlash\VFlashFiles\SrecReader.cs" />
+    <Compile Include="Libraries\VFlash\VFlashFiles\TraceWriter.cs" />
+    <Compile Include="Libraries\VFlash\VFlashFiles\Types\FwData.cs" />
+    <Compile Include="Libraries\VFlash\VFlashFiles\ConfigWriter.cs" />
+    <Compile Include="Libraries\VFlash\Flashing\Types\FlashException.cs" />
+    <Compile Include="Libraries\VFlash\Number.cs" />
+    <Compile Include="Libraries\VFlash\SeedKeyLoader.cs" />
+    <Compile Include="Libraries\VFlash\VFlashFiles\ConfigReader.cs" />
+    <Compile Include="Libraries\VFlash\SigCrcCalculator.cs" />
+    <Compile Include="Tabs\FlashInfoTab\ConfigTab.xaml.cs">
+      <DependentUpon>ConfigTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\FlashInfoTab\EcuTab.xaml.cs">
+      <DependentUpon>EcuTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\FlashInfoTab\FilesTab.xaml.cs">
+      <DependentUpon>FilesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\FlashInfoTab\FlashTab.xaml.cs">
+      <DependentUpon>FlashTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TraceTab.xaml.cs">
+      <DependentUpon>TraceTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ConfigViewModel.cs" />
+    <Compile Include="ViewModel\EcuViewModel.cs" />
+    <Compile Include="ViewModel\FileItemViewModel.cs" />
+    <Compile Include="ViewModel\FlashStepViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\TraceViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="Windows\ConfirmWindow.xaml.cs">
+      <DependentUpon>ConfirmWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FileInfoEditor.xaml.cs">
+      <DependentUpon>FileInfoEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\InfoWindow.xaml.cs">
+      <DependentUpon>InfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewEcuWindow.xaml.cs">
+      <DependentUpon>NewEcuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RenameWindow.xaml.cs">
+      <DependentUpon>RenameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SystemErrorWindow.xaml.cs">
+      <DependentUpon>SystemErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WaitingWindow.xaml.cs">
+      <DependentUpon>WaitingWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="devices\devices.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\CustomProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CustomScrollBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DeverloperInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LoadingIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CustomListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\FlashInfoTab\ConfigTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\FlashInfoTab\EcuTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\FlashInfoTab\FilesTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\FlashInfoTab\FlashTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\TraceTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ConfirmWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FileInfoEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\HelpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\InfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\NewEcuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RenameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SystemErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WaitingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Setup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Flash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Backgrounds\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Ecu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Trace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Failed.png" />
+    <Resource Include="Resources\Images\Icons\Pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_0.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_1.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_10.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_11.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_2.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_3.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_4.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_5.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_6.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_7.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_8.png" />
+    <Resource Include="Resources\Images\Icons\Loading\16x16\Image_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00001.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00002.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00003.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00004.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00005.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00006.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00007.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00008.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00009.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00010.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00011.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00012.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00013.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00014.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00015.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00016.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00017.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00018.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00019.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00020.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00021.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00022.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00023.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00024.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00025.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00026.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00027.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00028.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00029.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00030.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00031.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00032.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00033.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00034.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00035.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00036.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00037.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00038.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00039.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00040.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00041.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00042.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00043.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00044.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00045.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00046.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00047.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00048.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00049.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00050.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00051.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00052.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00053.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00054.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00055.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00056.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00057.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00058.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00059.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00060.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00061.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00062.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00063.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00064.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00065.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00066.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00067.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00068.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00069.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00070.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00071.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00072.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00073.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00074.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00075.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00076.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00077.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00078.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00079.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00080.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00081.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00082.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00083.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00084.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00085.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00086.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00087.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00088.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00089.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00090.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00091.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00092.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00093.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00094.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00095.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00096.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00097.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00098.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00099.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00100.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00101.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00102.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00103.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00104.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00105.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00106.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00107.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00108.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00109.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00110.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00111.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00112.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00113.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00114.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00115.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00116.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00117.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00118.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00119.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00120.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00121.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00122.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00123.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00124.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00125.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00126.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00127.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00128.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00129.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00130.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00131.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00132.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00133.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00134.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00135.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00136.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00137.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00138.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00139.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00140.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00141.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00142.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00143.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00144.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00145.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00146.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00147.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00148.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00149.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00150.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00151.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00152.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00153.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00154.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00155.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00156.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00157.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00158.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00159.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00160.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00161.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00162.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00163.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00164.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00165.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00166.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00167.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00168.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00169.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00170.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00171.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00172.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00173.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00174.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00175.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00176.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00177.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00178.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00179.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00180.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00181.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00182.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00183.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00184.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00185.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00186.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00187.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00188.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00189.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00190.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00191.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00192.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00193.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00194.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00195.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00196.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00197.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00198.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00199.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00200.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00201.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00202.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00203.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00204.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00205.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00206.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00207.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00208.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00209.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00210.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00211.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00212.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00213.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00214.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00215.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00216.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00217.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00218.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00219.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00220.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00221.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00222.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00223.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00224.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00225.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00226.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00227.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00228.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00229.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00230.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00231.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00232.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00233.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00234.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00235.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00236.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00237.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00238.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00239.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00240.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00241.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00242.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00243.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00244.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00245.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00246.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00247.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00248.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00249.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00250.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00251.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00252.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00253.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00254.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00255.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00256.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00257.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00258.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00259.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00260.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00261.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00262.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00263.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00264.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00265.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00266.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00267.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00268.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00269.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00270.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00271.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00272.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00273.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00274.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00275.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00276.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00277.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00278.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00279.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00280.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00281.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00282.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00283.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00284.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00285.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00286.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00287.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00288.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00289.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00290.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00291.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00292.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00293.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00294.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00295.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00296.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00297.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00298.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00299.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00300.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00301.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00302.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00303.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00304.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00305.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00306.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00307.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00308.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00309.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00310.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00311.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00312.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00313.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00314.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00315.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00316.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00317.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00318.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00319.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00320.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00321.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00322.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00323.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00324.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00325.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00326.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00327.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00328.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00329.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00330.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00331.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00332.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00333.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00334.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00335.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00336.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00337.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00338.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00339.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00340.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00341.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00342.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00343.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00344.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00345.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00346.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00347.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00348.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00349.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00350.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00351.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00352.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00353.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00354.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00355.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00356.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00357.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00358.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00359.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00360.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00361.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00362.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00363.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00364.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00365.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00366.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00367.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00368.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00369.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00370.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00371.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00372.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00373.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00374.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00375.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00376.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00377.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00378.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00379.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00380.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00381.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00382.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00383.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00384.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00385.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00386.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00387.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00388.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00389.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00390.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00391.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00392.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00393.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00394.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00395.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00396.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00397.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00398.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00399.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00400.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00401.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00402.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00403.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00404.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00405.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00406.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00407.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00408.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00409.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00410.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00411.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00412.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00413.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00414.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00415.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00416.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00417.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00418.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00419.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00420.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00421.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00422.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00423.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00424.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00425.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00426.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00427.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00428.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00429.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00430.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00431.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00432.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00433.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00434.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00435.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00436.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00437.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00438.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00439.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00440.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00441.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00442.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00443.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00444.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00445.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00446.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00447.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00448.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00449.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00450.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00451.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00452.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00453.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00454.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00455.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00456.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00457.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00458.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00459.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00460.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00461.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00462.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00463.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00464.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00465.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00466.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00467.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00468.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00469.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00470.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00471.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00472.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00473.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00474.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00475.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00476.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00477.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00478.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00479.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00480.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00481.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00482.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00483.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00484.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00485.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00486.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00487.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00488.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00489.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00490.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00491.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00492.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00493.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00494.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00495.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00496.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00497.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00498.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00499.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00500.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00501.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00502.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00503.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00504.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00505.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00506.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00507.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00508.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00509.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00510.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00511.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00512.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00513.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00514.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00515.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00516.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00517.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00518.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00519.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00520.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00521.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00522.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00523.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00524.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00525.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00526.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00527.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00528.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00529.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00530.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00531.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00532.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00533.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00534.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00535.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00536.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00537.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00538.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00539.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00540.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00541.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00542.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00543.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00544.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00545.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00546.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00547.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00548.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00549.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00550.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00551.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00552.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00553.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00554.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00555.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00556.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00557.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00558.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00559.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00560.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00561.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00562.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00563.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00564.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00565.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00566.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00567.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00568.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00569.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00570.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00571.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00572.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00573.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00574.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00575.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00576.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00577.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00578.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00579.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00580.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00581.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00582.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00583.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00584.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00585.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00586.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00587.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00588.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00589.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00590.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00591.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00592.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00593.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00594.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00595.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00596.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00597.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00598.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00599.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00600.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00601.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00602.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00603.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00604.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00605.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00606.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00607.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00608.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00609.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00610.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00611.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00612.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00613.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00614.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00615.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00616.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00617.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00618.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00619.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00620.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00621.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00622.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00623.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00624.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00625.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00626.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00627.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00628.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00629.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00630.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00631.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00632.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00633.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00634.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00635.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00636.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00637.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00638.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00639.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00640.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00641.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00642.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00643.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00644.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00645.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00646.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00647.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00648.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00649.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00650.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00651.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00652.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00653.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00654.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00655.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00656.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00657.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00658.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00659.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00660.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00661.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00662.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00663.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00664.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00665.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00666.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00667.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00668.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00669.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00670.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00671.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00672.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00673.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00674.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00675.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00676.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00677.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00678.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00679.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00680.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00681.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00682.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00683.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00684.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00685.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00686.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00687.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00688.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00689.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00690.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00691.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00692.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00693.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00694.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00695.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00696.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00697.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00698.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00699.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00700.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00701.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00702.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00703.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00704.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00705.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00706.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00707.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00708.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00709.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00710.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00711.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00712.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00713.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00714.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00715.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00716.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00717.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00718.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00719.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00720.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00721.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00722.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00723.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00724.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00725.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00726.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00727.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00728.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00729.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00730.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00731.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00732.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00733.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00734.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00735.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00736.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00737.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00738.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00739.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00740.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00741.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00742.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00743.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00744.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00745.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00746.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00747.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00748.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00749.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00750.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00751.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00752.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00753.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00754.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00755.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00756.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00757.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00758.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00759.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00760.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00761.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00762.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00763.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00764.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00765.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00766.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00767.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00768.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00769.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00770.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00771.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00772.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00773.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00774.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00775.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00776.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00777.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00778.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00779.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00780.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00781.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00782.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00783.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00784.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00785.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00786.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00787.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00788.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00789.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00790.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00791.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00792.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00793.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00794.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00795.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00796.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00797.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00798.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00799.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00800.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00801.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00802.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00803.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00804.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00805.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00806.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00807.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00808.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00809.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00810.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00811.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00812.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00813.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00814.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00815.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00816.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00817.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00818.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00819.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00820.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00821.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00822.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00823.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00824.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00825.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00826.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00827.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00828.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00829.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00830.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00831.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00832.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00833.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00834.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00835.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00836.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00837.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00838.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00839.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00840.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00841.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00842.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00843.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00844.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00845.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00846.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00847.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00848.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00849.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00850.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00851.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00852.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00853.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00854.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00855.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00856.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00857.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00858.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00859.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00860.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00861.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00862.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00863.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00864.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00865.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00866.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00867.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00868.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00869.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00870.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00871.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00872.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00873.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00874.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00875.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00876.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00877.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00878.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00879.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00880.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00881.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00882.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00883.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00884.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00885.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00886.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00887.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00888.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00889.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00890.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00891.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00892.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00893.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00894.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00895.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00896.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00897.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00898.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00899.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00900.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00901.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00902.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00903.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00904.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00905.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00906.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00907.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00908.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00909.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00910.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00911.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00912.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00913.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00914.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00915.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00916.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00917.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00918.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00919.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00920.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00921.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00922.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00923.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00924.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00925.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00926.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00927.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00928.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00929.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00930.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00931.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00932.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00933.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00934.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00935.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00936.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00937.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00938.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00939.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00940.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00941.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00942.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00943.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00944.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00945.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00946.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00947.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00948.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00949.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00950.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00951.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00952.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00953.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00954.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00955.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00956.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00957.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00958.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00959.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00960.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00961.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00962.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00963.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00964.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00965.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00966.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00967.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00968.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00969.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00970.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00971.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00972.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00973.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00974.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00975.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00976.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00977.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00978.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00979.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00980.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00981.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00982.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00983.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00984.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00985.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00986.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00987.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00988.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00989.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00990.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00991.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00992.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00993.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00994.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00995.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00996.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00997.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00998.jpg" />
+    <Resource Include="Resources\Images\Backgrounds\AbstractWhite\00999.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Exit.png" />
+    <Resource Include="Resources\Images\Icons\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Avatars\TungBT8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Avatars\Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Pulse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Rename.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\OpenConfig.png" />
+    <Resource Include="Resources\Images\Icons\OpenFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\CsvFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\XlsxFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_01.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_02.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_03.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_04.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_05.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_06.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_07.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_08.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_09.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_10.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_11.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_12.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_13.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_14.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_15.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_16.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_17.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_18.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_19.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_20.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_21.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_22.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_23.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_24.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_25.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_26.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_27.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_28.png" />
+    <Resource Include="Resources\Images\Icons\Loading\64x64\Loading_29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\pages\add_new_device.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="documents\pages\release_note.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="documents\scripts\index.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="documents\styles\navigation.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VFlashDevices\VFlashDevices.csproj">
+      <Project>{d3fdd797-91c2-455d-bce2-53d65df9bc45}</Project>
+      <Name>VFlashDevices</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\styles\code_color.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\styles\index.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="documents\images\icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\pages\home.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\images\backgrounds\nav_bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\images\backgrounds\bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\ArrowUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\ArrowDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\pages\custom_flash_sequence.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\styles\xml_desc_table.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\ClearBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\DeviceIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Backgrounds\Electronic.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+</Project>

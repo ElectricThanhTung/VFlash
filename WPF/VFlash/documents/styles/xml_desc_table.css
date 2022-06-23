@@ -1,0 +1,29 @@
+
+.main_table {
+    width: 100%;
+    background-color: #0000000f;
+    margin-top: 30px;
+    border: 1px solid darkgray;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.main_table th, .main_table td {
+    border: 1px solid darkgray;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.sub_table {
+    width: Calc(100% + 2px);
+    border: 0;
+    margin: -1px;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.sub_table th, .sub_table td {
+    border: 1px solid darkgray;
+    border-collapse: collapse;
+    padding: 5px;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles/index.css">
+        <link rel="stylesheet" href="styles/navigation.css">
+        <link rel="stylesheet" href="styles/code_color.css">
+        <title>Add New Device</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="scripts/index.js"></script>
+        <ul margin="0px" class="navigation_list" id="navigation_list">
+            <li onclick="showContent(this, 'pages/home.html')" class="active">Home</a></li>
+            <li onclick="showContent(this, 'pages/custom_flash_sequence.html')">Flashing Sequence</a></li>
+            <li onclick="showContent(this, 'pages/add_new_device.html')">Add own device</a></li>
+            <li onclick="showContent(this, 'pages/release_note.html')">Release Note</a></li>
+        </ul>
+        <div class="content_div">
+            <iframe class="content_iframe" id="content_iframe" src="pages/home.html"></iframe>
+        </div>
+    </body>
+</html>

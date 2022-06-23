@@ -1,0 +1,27 @@
+﻿<Window x:Class="VFlash.WaitingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VFlash"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        SizeToContent="WidthAndHeight"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        Title="Please Wait">
+    <Border Width="260" BorderBrush="DarkGray" BorderThickness="1.5" CornerRadius="8" Background="White" RenderOptions.BitmapScalingMode="HighQuality" Margin="20">
+        <Border.Effect>
+            <DropShadowEffect Opacity="0.4" BlurRadius="20"/>
+        </Border.Effect>
+        <StackPanel Orientation="Horizontal" Margin="8 8 0 8">
+            <Image x:Name="LoadingImage" Height="54" Source="/VFlash;component/Resources/Images/Icons/Loading/64x64/Loading_01.png"/>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="12 0 0 0">
+                <TextBlock Foreground="#404040" FontSize="16" FontWeight="SemiBold" Text="Please Wait..." Margin="0 0 0 5"/>
+                <TextBlock x:Name="MsgTextBlock" Foreground="DarkGray" FontSize="12" FontWeight="SemiBold" Text="Processing"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

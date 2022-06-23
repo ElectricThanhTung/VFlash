@@ -1,0 +1,75 @@
+﻿<Window x:Class="VFlash.NewEcuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VFlash"
+        mc:Ignorable="d"
+        FontFamily="Microsoft Sans Serif"
+        WindowStartupLocation="CenterOwner"
+        Icon="../Resources/Images/Icons/Ecu.png"
+        Title="New ECU"
+        ResizeMode="NoResize"
+        SizeToContent="Height"
+        Width="280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="48"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="0 3 0 20">
+            <StackPanel Grid.Row="0" Margin="10 0 10 0">
+                <TextBlock
+                    Text="Name:"
+                    TextWrapping="WrapWithOverflow"
+                    HorizontalAlignment="Left">
+                </TextBlock>
+                <TextBox
+                    x:Name="NameTextBox"
+                    MaxLength="16"
+                    Height="25"
+                    Margin="0 3 0 0"
+                    VerticalContentAlignment="Center"
+                    BorderBrush="DarkGray"
+                    Foreground="#404040"
+                    Background="#EEEEEE"
+                    KeyDown="NameInput_KeyDown">
+                </TextBox>
+                <TextBlock
+                    Text="Copy From:"
+                    Margin="0 10 0 0"
+                    TextWrapping="WrapWithOverflow"
+                    HorizontalAlignment="Left">
+                </TextBlock>
+                <ComboBox
+                    x:Name="EcuRefComboBox"
+                    Height="25"
+                    Margin="0 3 0 0"
+                    VerticalContentAlignment="Center"
+                    BorderBrush="LightGray"
+                    Foreground="#404040"
+                    Background="#FBFBFB"
+                    KeyDown="NameInput_KeyDown">
+                </ComboBox>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Background="#EEEEEE" BorderThickness="0 1 0 0" BorderBrush="DarkGray">
+            <Button
+                x:Name="OkButton"
+                Content="OK"
+                Width="80" Height="25"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="#FBFBFB"
+                BorderBrush="LightGray"
+                BorderThickness="1"
+                Click="OK_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Border>
+    </Grid>
+</Window>

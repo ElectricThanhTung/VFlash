@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="VFlash.DeverloperInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VFlash"
+             mc:Ignorable="d">
+    <StackPanel Orientation="Horizontal">
+        <Border Height="40" Width="40" CornerRadius="20" BorderBrush="LightGray" BorderThickness="1">
+            <Border.Background>
+                <ImageBrush x:Name="AvatarImage" ImageSource="/VFlash;component/Resources/Images/Avatars/Default.png"/>
+            </Border.Background>
+        </Border>
+        <StackPanel VerticalAlignment="Center" Margin="5 0 0 0">
+            <TextBlock Text="Name" x:Name="NameTextBox" FontWeight="SemiBold" Margin="0 0 0 3"/>
+            <TextBlock Text="Email" x:Name="EmailTextBox" FontWeight="SemiBold" FontSize="10" Foreground="Gray"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
