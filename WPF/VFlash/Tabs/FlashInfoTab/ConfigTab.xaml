@@ -219,6 +219,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"/>
@@ -247,7 +248,7 @@
                     FontWeight="SemiBold"
                     VerticalAlignment="Center">
                 </TextBlock>
-                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Height="25" VerticalAlignment="Top" Margin="0 0 0 5">
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Height="25" VerticalAlignment="Top" Margin="0 5 0 5">
                     <TextBox
                         x:Name="SeedKeyDLLTextBox"
                         Text="{Binding SeedKeyDll, UpdateSourceTrigger=PropertyChanged}"
@@ -277,7 +278,7 @@
                     FontWeight="SemiBold"
                     VerticalAlignment="Center">
                 </TextBlock>
-                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Height="25" VerticalAlignment="Top" Margin="0 0 0 5">
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Height="25" VerticalAlignment="Top" Margin="0 5 0 5">
                     <TextBox
                         x:Name="FlashActionsPAthTextBox"
                         Text="{Binding FlashActionsPath, UpdateSourceTrigger=PropertyChanged}"
@@ -299,6 +300,24 @@
                             <Image Height="16" Source="/VFlash;component/Resources/Images/Icons/OpenFile.png"/>
                         </Button.Content>
                     </Button>
+                </StackPanel>
+                <TextBlock
+                    Grid.Column="0" Grid.Row="3"
+                    Text="UDS default buffer size"
+                    Margin="5 0 0 0"
+                    FontWeight="SemiBold"
+                    VerticalAlignment="Center">
+                </TextBlock>
+                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="0 5 0 5">
+                    <TextBox
+                        Text="{Binding UDSBufferSizeString, UpdateSourceTrigger=PropertyChanged}"
+                        Width="200" Height="25"
+                        Background="#30FFFFFF"
+                        CaretBrush="Black"
+                        VerticalContentAlignment="Center"
+                        Margin="0 0 5 0">
+                    </TextBox>
+                    <TextBlock Text="byte" VerticalAlignment="Center"/>
                 </StackPanel>
             </Grid>
         </GroupBox>

@@ -162,6 +162,8 @@ namespace VFlashFiles {
                 cfg.SeedKeyDll = value["SeedKeyDll"];
             if(value.ContainsKey("FlashActionsPath"))
                 cfg.FlashActionsPath = value["FlashActionsPath"];
+            if(value.ContainsKey("UDSBufferSize"))
+                cfg.UDSBufferSize = Number.ForceToInt(value["UDSBufferSize"]);
         }
 
         private FlashConfigInfo ReadFlashCfg(XmlNode xmlNode) {

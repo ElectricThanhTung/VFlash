@@ -169,6 +169,7 @@ namespace VFlash.Flashing {
 
         public override void Execute(FlashActionArgs actionArgs) {
             this.actionArgs = actionArgs;
+            this.maxDataLength = actionArgs.UDSDefaultBufferSize;
             currentFileIndex = 0;
             foreach(FlashFileInfo file in actionArgs.Files) {
                 currentFileIndex = actionArgs.Files.IndexOf(file);

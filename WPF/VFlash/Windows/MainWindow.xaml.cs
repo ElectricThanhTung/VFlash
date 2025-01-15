@@ -307,6 +307,7 @@ namespace VFlash {
                 actionArgs.SecurityLevel = cfg.SecurityLevel;
                 actionArgs.SeedKeyDll = cfg.SeedKeyDll;
                 actionArgs.Files = ecuFlashInfo.GetActiveFiles();
+                actionArgs.UDSDefaultBufferSize = cfg.UDSBufferSize;
 
                 flashing.Execute(actionArgs);
 

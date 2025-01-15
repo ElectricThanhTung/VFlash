@@ -87,6 +87,7 @@ namespace VFlashFiles {
                 cfgNode.AppendChild(CreateConfigValueNode("P2", cfg.P2Value.ToString()));
                 cfgNode.AppendChild(CreateConfigValueNode("Timeout", cfg.Timeout.ToString()));
                 cfgNode.AppendChild(CreateConfigValueNode("SecurityLevel", cfg.SecurityLevel.ToString()));
+                cfgNode.AppendChild(CreateConfigValueNode("UDSBufferSize", cfg.UDSBufferSize.ToString()));
 
                 if(cfg.SeedKeyDll != null && cfg.SeedKeyDll.Trim() != "") {
                     string seedkeydll = cfg.SeedKeyDll.Trim().Replace("/", "\\");

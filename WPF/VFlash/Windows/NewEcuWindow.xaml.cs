@@ -73,6 +73,7 @@ namespace VFlash {
                 Timeout = config.Timeout,
                 SecurityLevel = config.SecurityLevel,
                 SeedKeyDll = config.SeedKeyDll,
+                UDSBufferSize = config.UDSBufferSize,
             };
         }
 

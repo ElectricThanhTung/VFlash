@@ -15,7 +15,8 @@ namespace VFlash.ViewModel {
         private string timeout;
         private int securityLevel;
         private string seedKeyDll;
-        private string flashActionsPath; 
+        private string flashActionsPath;
+        private string udsBufferSize;
 
         public ConfigViewModel() {
             canType = "CAN";
@@ -29,6 +30,7 @@ namespace VFlash.ViewModel {
             SeedKeyDll = "";
             SecurityLevel = 0x07;
             FlashActionsPath = "";
+            udsBufferSize = "4095";
         }
 
         private bool IsHexNumber(string text) {
@@ -287,6 +289,24 @@ namespace VFlash.ViewModel {
             set {
                 flashActionsPath = value;
                 OnPropertyChanged(nameof(FlashActionsPath));
+            }
+        }
+
+        public string UDSBufferSizeString {
+            get {
+                return CorrectNumberString(udsBufferSize);
+            }
+            set {
+                udsBufferSize = value;
+            }
+        }
+
+        public int UDSBufferSize {
+            get {
+                return Number.ForceToInt(udsBufferSize);
+            }
+            set {
+                udsBufferSize = value.ToString();
             }
         }
     }

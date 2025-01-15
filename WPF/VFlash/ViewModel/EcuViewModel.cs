@@ -47,6 +47,7 @@ namespace VFlash.ViewModel {
                 SecurityLevel = ecuFlashInfo.Config.SecurityLevel,
                 SeedKeyDll = ecuFlashInfo.Config.SeedKeyDll,
                 FlashActionsPath = ecuFlashInfo.Config.FlashActionsPath,
+                UDSBufferSize = ecuFlashInfo.Config.UDSBufferSize
             };
         }
 
@@ -78,6 +79,7 @@ namespace VFlash.ViewModel {
                 SecurityLevel = Config.SecurityLevel,
                 SeedKeyDll = Config.SeedKeyDll,
                 FlashActionsPath = Config.FlashActionsPath,
+                UDSBufferSize = Config.UDSBufferSize,
             };
 
             return ret;

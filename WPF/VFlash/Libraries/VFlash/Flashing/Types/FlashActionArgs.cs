@@ -23,6 +23,10 @@ namespace VFlash.Flashing {
             get; set;
         }
 
+        public int UDSDefaultBufferSize {
+            get; set;
+        }
+
         public List<FlashFileInfo> Files {
             get; set;
         }

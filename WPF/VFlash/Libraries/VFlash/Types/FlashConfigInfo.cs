@@ -78,5 +78,9 @@ namespace VFlash {
         public string FlashActionsPath {
             get; set;
         }
+
+        public int UDSBufferSize {
+            get; set;
+        }
     }
 }
