@@ -158,12 +158,15 @@ namespace VFlashFiles {
                 if(temp > 0)
                     cfg.SecurityLevel = temp;
             }
-            if(value.ContainsKey("SeedKeyDll"))
-                cfg.SeedKeyDll = value["SeedKeyDll"];
-            if(value.ContainsKey("FlashActionsPath"))
-                cfg.FlashActionsPath = value["FlashActionsPath"];
-            if(value.ContainsKey("UDSBufferSize"))
+            if(value.ContainsKey("SeedKeyDll") && (value["SeedKeyDll"] != ""))
+                cfg.SeedKeyDll = TryGetRelativePath(value["SeedKeyDll"]);
+            if(value.ContainsKey("FlashActionsPath") && (value["FlashActionsPath"] != ""))
+                cfg.FlashActionsPath = TryGetRelativePath(value["FlashActionsPath"]);
+            if(value.ContainsKey("UDSBufferSize")) {
                 cfg.UDSBufferSize = Number.ForceToInt(value["UDSBufferSize"]);
+                if(cfg.UDSBufferSize < 16)
+                    cfg.UDSBufferSize = 16;
+            }
         }
 
         private FlashConfigInfo ReadFlashCfg(XmlNode xmlNode) {
@@ -173,15 +176,6 @@ namespace VFlashFiles {
                 if(value.ContainsKey(node.Name))
                     throw CreateException("Invalid XML format. Duplicate \"" + node.Name + "\" attribute.");
                 value.Add(node.Name, node.InnerText);
-            }
-
-            if(value.ContainsKey("SeedKeyDll")) {
-                if(value["SeedKeyDll"] != "")
-                    value["SeedKeyDll"] = TryGetRelativePath(value["SeedKeyDll"]);
-            }
-            if(value.ContainsKey("FlashActionsPath")) {
-                if(value["FlashActionsPath"] != "")
-                    value["FlashActionsPath"] = TryGetRelativePath(value["FlashActionsPath"]);
             }
 
             FlashConfigInfo flashCfg = new FlashConfigInfo();
