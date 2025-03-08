@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text;
+using System.Windows.Markup;
 using System.Windows.Media;
+using VFlash.Flashing;
 
 namespace VFlash.ViewModel {
     public class TraceViewModel : ViewModelBase {
@@ -188,7 +190,95 @@ namespace VFlash.ViewModel {
             get {
                 if(txData == null)
                     return "Null";
-                return "Unknow";
+                try {
+                    switch(txData[0]) {
+                        case 0x10:
+                            return txData[1] switch {
+                                0x01 => "Default Session",
+                                0x02 => "Programming Session",
+                                0x03 => "Extended Diagnostic Session",
+                                0x04 => "Safety System Diagnostic Session",
+                                _ => "Diagnostic Session Control"
+                            };
+                        case 0x11:
+                            return txData[1] switch {
+                                0x01 => "Hard Reset",
+                                0x02 => "key Off-On Reset",
+                                0x03 => "Soft Reset",
+                                _ => "Reset"
+                            };
+                        case 0x14:
+                            return "Clear Diagnostic Information";
+                        case 0x27:
+                            return (txData[1] % 2) switch {
+                                0 => "Perform Security Access Level " + (txData[1] - 1),
+                                1 => "Request Seed Level " + txData[1],
+                                _ => "Security Access"
+                            };
+                        case 0x28: {
+                            if((txData[1] & 0x01) != 0x00)
+                                return "Disable Normal Communication";
+                            else
+                                return "Enable Normal Communication";
+                        }
+                        case 0x29:
+                            return "Authentication";
+                        case 0x3E:
+                            return "Tester Present";
+                        case 0x83:
+                            return "Access Timing Parameters";
+                        case 0x84:
+                            return "Secured Data Transmission";
+                        case 0x85:
+                            return txData[1] switch {
+                                0x01 => "Disable DTC Setting",
+                                0x02 => "Enable DTC Setting",
+                                _ => "Control DTC Settings"
+                            };
+                        case 0x86:
+                            return "Response On Event";
+                        case 0x87:
+                            return "Link Control";
+                        case 0x22:
+                            return "Read Data By Identifier";
+                        case 0x23:
+                            return "Read Memory By Address";
+                        case 0x24:
+                            return "Read Scaling Data By Identifier";
+                        case 0x2A:
+                            return "Read Data By Identifier Periodic";
+                        case 0x2C:
+                            return "Dynamically Define Data Identifier";
+                        case 0x2E:
+                            return "Write Data By Identifier";
+                        case 0x3D:
+                            return "Write Memory By Address";
+                        case 0x19:
+                            return "Read DTC Information";
+                        case 0x2F:
+                            return "Input Output Control By Identifier";
+                        case 0x31: {
+                            if(txData.Length >= 4 && txData[1] == 0x01 && txData[2] == 0x02 && txData[3] == 0x03)
+                                return "Check Programming Preconditions";
+                            else if(txData.Length >= 13 && txData[1] == 0x01 && txData[2] == 0xFF && txData[3] == 0x00 && txData[4] == 0x44)
+                                return "Request Erase";
+                            else if(txData.Length >= 4 && txData[1] == 0x01 && txData[2] == 0xFF && txData[3] == 0x01)
+                                return "Check Dependencies";
+                            else if(txData.Length >= 4 && txData[1] == 0x01 && txData[2] == 0x02 && txData[3] == 0x02)
+                                return "Check Signature/CRC";
+                            return "Routine Control";
+                        }
+                        case 0x34: return "Request Download";
+                        case 0x35: return "Request Upload";
+                        case 0x36: return "Transfer Data";
+                        case 0x37: return "Request Transfer Exit";
+                        case 0x38: return "Request File Transfer";
+                        default: return "Unknow";
+                    }
+                }
+                catch {
+                    return "Unknow";
+                }
             }
         }
 
